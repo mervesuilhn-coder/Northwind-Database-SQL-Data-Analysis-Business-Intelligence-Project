@@ -1,0 +1,21 @@
+SELECT
+    c.MusteriID,
+    c.SirketAdi,
+    COUNT(DISTINCT(S.SatisID)) SatisAdedi,
+    COUNT(*) UrunSayisi,
+    ROUND(SUM(sd.Miktar * sd.BirimFiyati*(1-indirim)),2) ToplamTutar
+FROM Musteriler c
+JOIN Satislar s ON c.MusteriID = s.MusteriID
+JOIN SatisDetaylari sd  ON s.SatisID = sd.SatisID
+WHERE c.MusteriID = 'ALFKI'
+GROUP BY
+    c.MusteriID,
+    c.SirketAdi
+HAVING COUNT(*)>=100 OR ROUND(SUM(sd.Miktar * sd.BirimFiyati*(1-indirim)),2)>=50000
+ORDER BY ToplamTutar DESC
+
+-- Bu sorgumuzda Sat�� detaylar� tablomuzdan elde etti�imiz sat�lan "miktar,fiyat ve indirim" verilerimiz
+--ile "ALFKI" m��teriID sine sahip m��terinin toplam sipari� tutar�na ula�t�k.
+--Burada Group By kullanmak zorunday�z ��nk� SELECT i�inde aggregate olmayan t�m kolonlar GROUP BY i�inde olmak zorundad�r.
+--Anlam�="en az 100 �r�n sat�r� olan veya toplam sat�� tutar� 50.000 ve �zeri olan m��terileri getir.�
+--Order By anlam�= en �ok harcama yapan m��teri en �stte olsun
