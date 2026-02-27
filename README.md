@@ -20,8 +20,8 @@ Solve specific business problems I encountered during my internship.
 Practice and demonstrate my proficiency in complex T-SQL concepts such as CTEs, Window Functions, and Multi-layered Joins.
 ---------------------------------------------------------------------------------------------------------------------
   Covers all the basic and advanced competencies a SQL developer would need:
-  1) Data Manipulation and Basic Querying Fundamentals: Data cleaning and filtering using functions such as Using_Between, Using_Like&,Len, Using_Round, and Using_Distinct.
-  **
+  1) Data Manipulation and Basic Querying Fundamentals: Data cleaning and filtering using functions such as Using_Between, Using_Like&Len, Using_Round, and Using_Distinct.
+  **https://github.com/mervesuilhn-coder/Northwind-Database-SQL-Data-Analysis-Business-Intelligence-Project/blob/56202cc3f44b1125d012457ac30cd0bf1a6ff3e8/scripts/Using_Like_Len.sql
   --CRUD Operations: The logic of Update_Insert_Delete for data management.
   --Date Functions: Using_Datediff and Date_Based_Sales_Using_Cast for time-based analyses.
   
