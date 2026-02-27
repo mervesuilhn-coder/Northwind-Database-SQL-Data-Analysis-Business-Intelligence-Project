@@ -1,0 +1,18 @@
+/****** SSMS’ten SelectTopNRows komutu için betik  ******/
+SELECT TOP (1000) [MusteriID]
+      ,[SirketAdi]
+      ,[MusteriAdi]
+      ,[MusteriUnvani]
+      ,[Adres]
+      ,[Sehir]
+      ,[Bolge]
+      ,[PostaKodu]
+      ,[Ulke]
+      ,[Telefon]
+      ,[Faks]
+  FROM [Northwind].[dbo].[Musteriler] WHERE [MusteriID]='MRVS'
+
+SELECT * FROM [Northwind].[dbo].[Musteriler] WHERE MusteriID='MRVS'
+INSERT INTO [Northwind].[dbo].[Musteriler] (MusteriID,SirketAdi,MusteriAdi) VALUES ('MRVS','Merve Su','İlhan')
+UPDATE [Northwind].[dbo].[Musteriler] SET SirketAdi='İlhan',MusteriAdi='Merve Su' WHERE MusteriID='MRVS'
+DELETE FROM [Northwind].[dbo].[Musteriler] WHERE MusteriID='MRVS'
